@@ -1,10 +1,12 @@
 import { el } from './elements'
 import toast from '../../components/toast'
+import alert from '../../components/alert'
 
 class SignupPage {
 
     constructor() {
-        this.toast = toast
+        this.toast = toast //cria objeto para ter acesso ao componente
+        this.alert = alert
     }
     
     go() {
@@ -27,11 +29,6 @@ class SignupPage {
     
     submit() {
         cy.contains(el.signupButton).click()
-    }
-
-    alertHaveText(expectedText){
-        cy.contains('.alert-error', expectedText)
-        .should('be.visible')
     }
 }
 
