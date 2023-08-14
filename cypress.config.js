@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 const { pool, Pool } = require('pg')
 
-/// <reference types="Cypress" />
+// <reference types="Cypress" />
 
 module.exports = defineConfig({
   e2e: {
@@ -32,16 +32,16 @@ module.exports = defineConfig({
         },
         findToken(email) {
           return new Promise((resolve) => {
-            pool.query(`SELECT B.token from
-                      public.users A
-                      INNER JOIN public.user_tokens B
-                      ON A.id = B.user_id
-                      WHERE A.email = $1
-                      ORDER BY B.created_at`, [email], (error, result) => {
+            pool.query('select B.token from ' +
+            'public.users A ' +
+            'INNER JOIN public.user_tokens B ' + 
+            'ON A.id = B.user_id ' +
+            'WHERE A.email = $1 ' +
+            'ORDER BY B.created_at', [email], (error, result) => {
               if (error) {
                 throw error
               }
-              resolve({ token: result.rows[0].token })
+              resolve({token: result.rows[0].token})
             })
           })
         }
