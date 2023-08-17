@@ -6,6 +6,7 @@ const { pool, Pool } = require('pg')
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:3000',
+    apiServer: 'http://localhost:3333',
     viewportWidth: 1440,
     viewportHeight: 900,
 
