@@ -21,9 +21,7 @@ describe('Login', function () {
             loginPage.go()
             loginPage.form(user)
             loginPage.submit()
-
             dashPage.header.userLoggedIn(user.name)
-
         })
     })
 

@@ -24,7 +24,6 @@ describe('Cadastro', function () {
             signupPage.form(this.success)
             signupPage.submit()
             signupPage.toast.shouldHaveText('Agora você se tornou um(a) Samurai, faça seu login para ver seus agendamentos!')
-
         })
     })
 
@@ -47,7 +46,6 @@ describe('Cadastro', function () {
             signupPage.form(this.email_inv)
             signupPage.submit()
             signupPage.alert.haveText('Informe um email válido')
-
         })
     })
 
@@ -61,9 +59,7 @@ describe('Cadastro', function () {
 
         passwords.forEach(function (p) {
             it('Não deve cadastrar com a senha: ' + p, function () {
-
                 this.shor_password.password = p    
-
                 signupPage.form(this.shor_password)
                 signupPage.submit()
             })

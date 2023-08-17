@@ -14,7 +14,13 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import { after } from 'underscore'
 import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+//Comando para dar screenshot em todos os testes passando ou não, vai ficar comentado pq já gera em vídeo
+// afterEach(function(){
+//     cy.screenshot()
+// })

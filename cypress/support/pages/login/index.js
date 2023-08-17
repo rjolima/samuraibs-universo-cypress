@@ -11,6 +11,9 @@ class LoginPage {
 
     go(){
         cy.visit('/')
+        //checkpoint de validação
+        cy.contains(el.title)
+            .should('be.visible')
     }
 
     form(user) {
