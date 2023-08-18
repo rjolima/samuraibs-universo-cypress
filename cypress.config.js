@@ -5,10 +5,10 @@ const { pool, Pool } = require('pg')
 
 module.exports = defineConfig({
   e2e: {
-    // baseUrl: 'http://localhost:3000',
-    // apiServer: 'http://localhost:3333',
-    baseUrl: 'https://samuraibs-api-dino.herokuapp.com',
-    apiServer: 'https://samuraibs-web-dino.herokuapp.com',
+    baseUrl: 'http://localhost:3000',
+    apiServer: 'http://localhost:3333',
+    baseUrl: 'https://samuraibs-api-dino.fly.dev',
+    apiServer: 'https://samuraibs-web-dino.fly.dev',
     viewportWidth: 1440,
     viewportHeight: 900,
     defaultCommandTimeout: 30000,
