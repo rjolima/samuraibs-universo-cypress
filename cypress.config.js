@@ -7,8 +7,11 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:3000',
     apiServer: 'http://localhost:3333',
+    // baseUrl: 'https://samuraibs-api-dino.herokuapp.com',
+    // apiServer: 'https://samuraibs-web-dino.herokuapp.com',
     viewportWidth: 1440,
     viewportHeight: 900,
+    defaultCommandTimeout: 30000,
 
     setupNodeEvents(on, config) {
       // implement node event listeners here
@@ -31,6 +34,7 @@ module.exports = defineConfig({
             })
           })
         },
+        
         findToken(email) {
           return new Promise((resolve) => {
             pool.query('select B.token from ' +
