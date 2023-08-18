@@ -12,6 +12,7 @@ module.exports = defineConfig({
     viewportWidth: 1440,
     viewportHeight: 900,
     defaultCommandTimeout: 30000,
+    projectId: "mbixxx",
 
     setupNodeEvents(on, config) {
       // implement node event listeners here
@@ -34,20 +35,20 @@ module.exports = defineConfig({
             })
           })
         },
-        
+
         findToken(email) {
           return new Promise((resolve) => {
             pool.query('select B.token from ' +
-            'public.users A ' +
-            'INNER JOIN public.user_tokens B ' + 
-            'ON A.id = B.user_id ' +
-            'WHERE A.email = $1 ' +
-            'ORDER BY B.created_at', [email], (error, result) => {
-              if (error) {
-                throw error
-              }
-              resolve({token: result.rows[0].token})
-            })
+              'public.users A ' +
+              'INNER JOIN public.user_tokens B ' +
+              'ON A.id = B.user_id ' +
+              'WHERE A.email = $1 ' +
+              'ORDER BY B.created_at', [email], (error, result) => {
+                if (error) {
+                  throw error
+                }
+                resolve({ token: result.rows[0].token })
+              })
           })
         }
       })
