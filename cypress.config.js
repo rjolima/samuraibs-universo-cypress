@@ -13,6 +13,8 @@ module.exports = defineConfig({
     viewportHeight: 900,
     defaultCommandTimeout: 30000,
 
+    projectId: "mbixxx",
+
     setupNodeEvents(on, config) {
       // implement node event listeners here
       const pool = new Pool({
